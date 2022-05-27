@@ -1,0 +1,147 @@
+:root {
+    --peru: #cd9452;
+    --black: #262626;
+    --green: #42AD55;
+    --greenB: #00B34F;
+    --white: #fff;
+    --light-black: #666;
+    --light-white: #ccc;
+    --light-bg: #f5f5f5;
+    --dark-bg: rgba(0, 0, 0, 0.295);
+    --border: .1rem solid #aaa;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+
+}
+
+
+/* ----------------- CART PAGE --------------- */
+
+.container-products {
+    /* max-width: 650px; */
+    justify-content: space-around;
+    margin: 0 auto;
+    /* margin-top: 50px; */
+    background-color: #fff;
+    padding: 3rem 3rem;
+}
+
+.container-products ion-icon {
+    font-size: 25px;
+    color: var(--green);
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.product-header {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid var(--green);
+    margin: 0 auto;
+}
+
+.product-title {
+    width: 45%;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.price {
+    width: 15%;
+    /* border-bottom: 1px solid lightgray; */
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.quantity {
+    width: 30%;
+    /* border-bottom: 1px solid lightgray; */
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.total {
+    width: 10%;
+    /* border-bottom: 1px solid lightgray; */
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.product {
+    width: 45%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 0;
+    /* border-bottom: 2px solid lightgray; */
+
+}
+
+.product ion-icon {
+    cursor: pointer;
+
+}
+
+.products {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products img {
+    width: 100px;
+}
+
+.basketTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 30px;
+}
+
+.basketTotalTitle {
+    width: 30%;
+    text-align: right;
+    color: var(--black);
+}
+
+.basketTotal {
+    width: 10%;
+    color: var(--black);
+}
+
+.sm-hide, .quantity, .price, .total, .product-title {
+    color: var(--black);
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+@media(max-width: 500px) {
+    nav h2 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        ;
+    }
+
+    .sm-hide {
+        display: none;
+        ;
+    }
+
+    .products,
+    .product-header {
+        justify-content: center;
+    }
+
+    .basketTotalContainer {
+        padding-right: 8%;
+    }
+}

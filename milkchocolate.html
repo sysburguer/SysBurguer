@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSBURGUER</title>
+    <link rel="icon" type="image/x-icon" href="images/Logofav.svg">
+    <link rel="stylesheet" href="css/3dflip.css">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="css/loginmodal.css">
+
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="css/lightgallery.min.css">
+
+    <link rel="stylesheet" href="css/gridbox.css">
+
+    <link rel="stylesheet" href="css/nutri.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="js/login.js"></script>
+    <link rel="stylesheet" href="css/alert.css">
+    <script src="js/sweetalert2.all.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- header section starts     -->
+
+    <section class="header">
+
+        <a href="index.html" class="logo"><img src="images/Logo.svg" alt="" srcset="" width="110px"></a>
+
+        <nav class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="cardapio.html">cardápio</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="contato.html">Contato</a>
+            <!-- <a href="login.html"><i class="fas fa-user-alt" style="font-size:25px"></i></a>
+            <a href="carinho.html"><i class="fas fa-shopping-cart" style="font-size:25px"></i></a> -->
+        </nav>
+
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <nav class="navbariconxxx">
+            <ul>
+                <div class="cart">
+                    <div class="dropdown">
+                        <i class="fas fa-user-alt iconuser" id="ativar" style="font-size:25px;"
+                            onclick="document.getElementById('id01').style.display='block'"></i>
+
+                        <!-- <div id="ativar1" class="dropdown-content" style="visibility: hidden;"> -->
+                        <div id="ativar1" class="dropdown-content">
+
+                            <a id=" emailperfil" style="display:none;">
+                                <!-- <script>document.write(localStorage.getItem('email'));</script> -->
+                            </a>
+                            <a href="paineladmin.html">Painel Admin</a>
+                            <a href="meusdados.html">Meus dados</a>
+                            <a href="meuspedidos.html">Meus pedidos</a>
+                            <a href="gpstracker.html">Rastreamento</a>
+                            <a href="" onclick="Sair()">Sair</a>
+                        </div>
+                    </div>
+                    <a href="carinho.html">
+                        <i class="fas fa-cart-arrow-down" style="font-size: 25px; margin-left: 5px;"></i>
+                        <!-- <ion-icon name="basket"></ion-icon> -->
+                        <span
+                            style="padding: 4px; border-radius: 10px; background-color: green; color: #fff; position: relative; right: 8px;">0</span>
+                    </a>
+                </div>
+            </ul>
+        </nav>
+
+    </section>
+
+    <div id="id01" class="modal" style="z-index: 999;">
+
+        <form class="modal-content1 animate">
+            <div class="login_body">
+                <div class="login_box">
+                    <span class="closelogin"
+                        onclick="document.getElementById('id01').style.display='none'">&times;</span>
+                    <h2>Já tenho cadastro</h2>
+                    <div class="input_box">
+                        <input required type="email" placeholder="Email" id="email" name="">
+                    </div>
+
+                    <div class="input_box">
+                        <input required type="password" placeholder="Senha" id="senha" name="">
+                    </div>
+
+                    <div>
+                        <button class="submit" value="Login" onclick="validate()">
+                            Entrar
+                        </button>
+                    </div>
+
+                    <div class="support">
+                        <div class="remember">
+                            <span><input type="checkbox" style="margin: 0;padding: 0; height: 13px;"></span>
+                            <span>Lembre-se de mim</span>
+                        </div>
+                        <div class="help">
+                            <a href="#" onclick="esquecer()">
+                                Esqueci a minha senha?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="login_footer">
+                        <div class="sign_up">
+                            <p>Novo por aqui? <a href="cadastrar.html">Quero me cadastrar</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- header section ends    -->
+
+
+    <!-- Aqui pode criar pagina -->
+
+
+
+    <div class="heading">
+        <!-- <span></span> -->
+        <h3 style="color: white; text-transform: uppercase; padding-top: 60px;">Milk Shake Chocolate</h3>
+        <center>
+            <hr style="width: 280px; color: var(--green);">
+        </center>
+    </div>
+
+
+
+    <section>
+        <div class="flex-container">
+            <div class="containernutri flex-item-left">
+                <img src="images/milkshakechocolate.png" alt="Avatar" class="imagenutri">
+                <!-- <div class="middle">
+                    <a href="cardapio.html"><button class="buttonnutri">Adicionar</button></a>
+                </div> -->
+            </div>
+
+            <div class="descrição flex-item-right">
+
+                <p class="pnutri">Deliciosamente cremoso. O novo Milk Shake Chocolate é feito com leite e batido na
+                    hora. Uma delícia!</p>
+
+                <p class="precoaut">R$20,00</p>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+
+            </div>
+        </div>
+
+        <br><br>
+        <hr>
+
+        <section class="titulo" id="titulo">
+
+            <h3>Informação nutricional</h3>
+
+        </section>
+
+
+        <table id="tablenutri">
+            <tr>
+                <th id="tablenutri">628kcal <br>
+                    <p id="pnutri">Calorias</p>
+                </th>
+                <th id="tablenutri">20g<br>
+                    <p id="pnutri">Gordura total</p>
+                </th>
+                <th id="tablenutri">103g<br>
+                    <p id="pnutri">Carboidratos</p>
+                </th>
+                <th id="tablenutri">9g<br>
+                    <p id="pnutri">Proteínas</p>
+                </th>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>Informação nutricional</th>
+                <th>Por Porção</th>
+                <th>*VD%</th>
+            </tr>
+            <tr>
+                <td>Energia (Kcal)</td>
+                <td>628g</td>
+                <td>31%</td>
+            </tr>
+            <tr>
+                <td id="trnutri">Carboidratos</td>
+                <td id="trnutri">103g</td>
+                <td id="trnutri">34%</td>
+            </tr>
+            <tr>
+                <td>Proteínas</td>
+                <td>9g</td>
+                <td>12%</td>
+            </tr>
+            <tr>
+                <td id="trnutri">Gordura total</td>
+                <td id="trnutri">20g</td>
+                <td id="trnutri">36%</td>
+            </tr>
+            <tr>
+                <td>Gorduras saturadas</td>
+                <td>10g</td>
+                <td>46%</td>
+            </tr>
+            <tr>
+                <td id="trnutri">Gordura trans</td>
+                <td id="trnutri">2.4g</td>
+                <td id="trnutri">0%</td>
+            </tr>
+            <tr>
+                <td>Fibra alimentar</td>
+                <td>1g</td>
+                <td>4%</td>
+            </tr>
+            <tr>
+                <td id="trnutri">Sódio</td>
+                <td id="trnutri">290mg</td>
+                <td id="trnutri">12%</td>
+            </tr>
+        </table>
+        </div>
+        <script src="js/produtos/milkshakechocolate.js"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="js/alert.js"></script>
+    </section>
+
+
+    <!-- Fim pagina -->
+
+
+    <section class="food" id="food">
+
+        <hr><br><br>
+
+        <div class="heading">
+
+            <h3 style="color: white; text-transform: uppercase; font-size: 2.5rem;">Produtos Relacionados</h3>
+            <center></center>
+        </div>
+
+        <div class="swiper food-slider">
+
+            <div class="swiper-wrapper">
+
+                <!-- <div class="swiper-slide slide" data-name="food-1">
+                    <img src="images/Milk-Shake-Chocolate.png" alt="">
+                    <h3>MILK SHAKE CHOCOLATE</h3>
+                    <div class="price">R$20,00</div>
+                </div> -->
+
+                <div class="swiper-slide slide" data-name="food-2">
+                    <a href="milkmorango.html">
+                        <img src="images/milkshakemorango.png" alt=""></a>
+                    <h3>MILK SHAKE MORANGO</h3>
+                    <!-- <div class="price">R$20,00</div> -->
+                </div>
+
+                <div class="swiper-slide slide" data-name="food-3">
+                    <a href="milkovo.html">
+                        <img src="images/milkshakeovomaltine.png" alt=""></a>
+                    <h3>MILK SHAKE OVOMALTINE</h3>
+                    <!-- <div class="price">R$20,00</div> -->
+                </div>
+
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+
+        </div>
+        <!-- <div class="btncenter"><a href="cardapio.html" class="btn">mais produtos</a></div> -->
+
+    </section>
+
+
+
+
+
+    <!-- footer section starts  -->
+    <section class="footer">
+
+
+        <div class="share">
+            <a href="https://pt-br.facebook.com/sysburguer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/sysburguer" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/sysburguer" class="fab fa-instagram"></a>
+            <a href="https://br.linkedin.com/sysburguer" class="fab fa-linkedin"></a>
+        </div>
+
+        <div class="credit"> © Copyright <span>SYSBURGUER</span> | Todos os direitos reservados | <a id="myBtn"
+                class="Pol"> Política de Privacidade</a> | <a id="myBtn1" class="Pol"> Formas de Pagamentos</a> <br>
+            <p style="padding-top:5px">(Andrews - Everton - José - Luis - Marcos - Mário - Vitória | <b>SENAI 2022 -
+                    3TDS</b>)</p>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>TERMOS DE SERVIÇO E POLÍTICA DE PRIVACIDADE POLÍTICA DE PRIVACIDADE DA SYSBURGUER</h3><br>
+
+                <p>Todas as suas informações pessoais recolhidas, serão usadas para o ajudar a tornar a sua visita
+                    no
+                    nosso site o mais produtiva e agradável possível.
+                </p>
+
+                <p>A garantia da confidencialidade dos dados pessoais dos utilizadores do nosso site é importante
+                    para o
+                    SYSBURGUER.</p>
+
+                <p>Todas as informações pessoais relativas a membros, assinantes, clientes ou visitantes que usem o
+                    SYSBURGUER serão tratadas em concordância com a Lei da Proteção de Dados Pessoais de 26 de
+                    outubro
+                    de 1998 (Lei n.º 67/98).</p>
+
+                <p>A informação pessoal recolhida pode incluir o seu nome, e-mail, número de telefone e/ou
+                    telemóvel,
+                    morada, data de nascimento e/ou outros.</p>
+
+                <p>O uso do SYSBURGUER pressupõe a aceitação deste Acordo de privacidade. A equipa do SYSBURGUER
+                    reserva-se ao direito de alterar este acordo sem aviso prévio. Deste modo, recomendamos que
+                    consulte
+                    a nossa política de privacidade com regularidade de forma a estar sempre atualizado.</p><br>
+
+                <h3>OS ANÚNCIOS </h3><br>
+                <p>Tal como outros websites, coletamos e utilizamos informação contida nos anúncios. A informação
+                    contida nos anúncios, inclui o seu endereço IP (Internet Protocol), o seu ISP (Internet Service
+                    Provider, como o Sapo, Clix, ou outro), o browser que utilizou ao visitar o nosso website (como
+                    o
+                    Internet Explorer ou Google Chrome), o tempo da sua visita e que páginas visitou dentro do nosso
+                    website.</p><br>
+
+                <h3>OS COOKIES E WEB BEACONS</h3><br>
+                <p>Utilizamos cookies para armazenar informação, tais como as suas preferências pessoas quando
+                    visita o
+                    nosso website. Isto poderá incluir um simples popup, ou uma ligação em vários serviços que
+                    providenciamos, tais como fóruns.</p>
+
+                <p>Em adição também utilizamos publicidade de terceiros no nosso website para suportar os custos de
+                    manutenção. Alguns destes publicitários, poderão utilizar tecnologias como os cookies e/ou web
+                    beacons quando publicitam no nosso website, o que fará com que esses publicitários (como o
+                    Google
+                    através do Google AdSense) também recebam a sua informação pessoal, como o endereço IP, o seu
+                    ISP, o
+                    seu browser, etc. Esta função é geralmente utilizada para geotargeting (mostrar publicidade de
+                    Lisboa apenas aos leitores oriundos de Lisboa por ex.) ou apresentar publicidade direcionada a
+                    um
+                    tipo de utilizador (como mostrar publicidade de restaurante a um utilizador que visita sites de
+                    culinária regularmente, por ex.).
+                </p>
+
+                <p>Você detém o poder de desligar os seus cookies, nas opções do seu browser, ou efetuando
+                    alterações
+                    nas ferramentas de programas Anti-Virus, como o Norton Internet Security. No entanto, isso
+                    poderá
+                    alterar a forma como interage com o nosso website, ou outros websites. Isso poderá afetar ou não
+                    permitir que faça logins em programas, sites ou fóruns da nossa e de outras redes.</p><br>
+
+                <h3>LIGAÇÕES A SITES DE TERCEIROS</h3><br>
+                <p>SYSBURGUER possui ligações para outros sites, os quais, a nosso ver, podem conter informações /
+                    ferramentas úteis para os nossos visitantes. A nossa política de privacidade não é aplicada a
+                    sites
+                    de terceiros, pelo que, caso visite outro site a partir do nosso deverá ler a politica de
+                    privacidade do mesmo.</p>
+
+                <p>Não nos responsabilizamos pela política de privacidade ou conteúdo presente nesses mesmos sites.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Modal formas de pagamentos  -->
+        <div id="mymodalpg" class="modalpg">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>FORMAS DE PAGAMENTOS</h3><br><br>
+                <div class="tabelaformapg">
+                    <img src="images/formapagamento/msvrtpos.svg" alt="" srcset="">
+                    <img src="images/formapagamento/visa.svg" alt="" srcset="">
+                    <img src="images/formapagamento/dinersclubinternational-1.svg" alt="" srcset="">
+                    <img src="images/formapagamento/elo.svg" alt="" srcset="">
+                    <img src="images/formapagamento/vrvalerefeicao.svg" alt="" srcset="">
+                    <img src="images/formapagamento/tickerrestaurant.svg" alt="" srcset="">
+                    <img src="images/formapagamento/picpay.svg" alt="" srcset="">
+                    <img src="images/formapagamento/pix.svg" alt="" srcset="">
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- FIM MODAL FORMAS DE PAGAMENTOS -->
+
+        <script>
+
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            var modalpg = document.getElementById("mymodalpg");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+            var btn1 = document.getElementById("myBtn1");
+
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            var span1 = document.getElementsByClassName("close")[1];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            btn1.onclick = function () {
+                modalpg.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            span1.onclick = function () {
+                modalpg.style.display = "none";
+            }
+
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                if (event.target == modalpg) {
+                    modalpg.style.display = "none";
+                }
+            }
+        </script>
+
+    </section>
+
+    <!-- footer section ends  -->
+
+
+
+
+
+
+
+
+
+
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <script src="js/lightgallery.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    <script>
+        lightGallery(document.querySelector('.gallery .gallery-container'));
+    </script>
+
+
+
+
+</body>
+
+</html>

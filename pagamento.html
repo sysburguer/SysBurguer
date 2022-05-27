@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SYSBURGUER</title>
+   <link rel="icon" type="image/x-icon" href="images/Logofav.svg">
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="css/loginmodal.css">
+
+   <link rel="stylesheet" href="css/all.min.css">
+
+   <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+   <link rel="stylesheet" href="css/lightgallery.min.css">
+
+   <link rel="stylesheet" href="css/alert.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="css/sidecart.css">
+   <link rel="stylesheet" href="css/produtoscart.css">
+   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+   <!-- custom script file link -->
+   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+   <script src="js/login.js"></script>
+   <script src="js/sweetalert2.all.min.js"></script>
+   <script src="js/alert.js"></script>
+
+
+
+   <style>
+      .row {
+         display: -ms-flexbox;
+         /* IE10 */
+         display: flex;
+         -ms-flex-wrap: wrap;
+         /* IE10 */
+         flex-wrap: wrap;
+         margin: 0 -16px;
+         font-family: Arial;
+         font-size: 15px;
+      }
+
+      .col-25 {
+         -ms-flex: 25%;
+         /* IE10 */
+         flex: 25%;
+      }
+
+      .col-50 {
+         -ms-flex: 50%;
+         /* IE10 */
+         flex: 50%;
+      }
+
+      .col-75 {
+         -ms-flex: 20%;
+         /* IE10 */
+         flex: 20%;
+      }
+
+      .col-25,
+      .col-50,
+      .col-75 {
+         padding: 0 16px;
+      }
+
+
+      input[type=text] {
+         width: 100%;
+         margin-bottom: 20px;
+         padding: 12px;
+         border: 1px solid #ccc;
+         border-radius: 3px;
+      }
+
+      label {
+         margin-bottom: 10px;
+         display: block;
+      }
+
+      .btn {
+         width: 100%;
+         cursor: pointer;
+      }
+
+      /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+      @media (max-width: 800px) {
+         .row {
+            flex-direction: column-reverse;
+         }
+
+         .col-25 {
+            margin-bottom: 20px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+
+   <!-- header section starts     -->
+
+   <section class="header">
+
+      <a href="index.html" class="logo"><img src="images/Logo.svg" alt="" srcset="" width="110px"></a>
+
+      <nav class="navbar">
+         <a href="index.html">HOME</a>
+         <a href="cardapio.html">cardápio</a>
+         <a href="quemsomos.html">Quem somos</a>
+         <a href="contato.html">Contato</a>
+         <!-- <a href="login.html"><i class="fas fa-user-alt" style="font-size:25px"></i></a>
+      <a href="carinho.html"><i class="fas fa-shopping-cart" style="font-size:25px"></i></a> -->
+
+      </nav>
+
+
+
+      <div id="menu-btn" class="fas fa-bars"></div>
+      <nav class="navbariconxxx">
+         <!-- <a href="carinho.html"><i class="fas fa-shopping-cart" style="font-size:25px"></i></a> -->
+
+         <ul>
+            <div class="cart">
+               <div class="dropdown">
+                  <i class="fas fa-user-alt iconuser" id="ativar" style="font-size:25px;"
+                     onclick="document.getElementById('id01').style.display='block'"></i>
+
+                  <!-- <div id="ativar1" class="dropdown-content" style="visibility: hidden;"> -->
+                  <div id="ativar1" class="dropdown-content">
+
+                     <a id=" emailperfil" style="display:none;">
+                        <!-- <script>document.write(localStorage.getItem('email'));</script> -->
+                     </a>
+                     <a href="paineladmin.html">Painel Admin</a>
+                     <a href="meusdados.html">Meus dados</a>
+                     <a href="meuspedidos.html">Meus pedidos</a>
+                     <a href="gpstracker.html">Rastreamento</a>
+                     <a href="" onclick="Sair()">Sair</a>
+                  </div>
+               </div>
+               <a href="carinho.html">
+                  <i class="fas fa-cart-arrow-down" style="font-size: 25px; margin-left: 5px;"></i>
+                  <!-- <ion-icon name="basket"></ion-icon> -->
+                  <span
+                     style="padding: 4px; border-radius: 10px; background-color: green; color: #fff; position: relative; right: 8px;">0</span>
+               </a>
+            </div>
+         </ul>
+      </nav>
+
+   </section>
+
+   <div id="id01" class="modal" style="z-index: 999;">
+
+      <form class="modal-content1 animate">
+         <div class="login_body">
+            <div class="login_box">
+               <span class="closelogin" onclick="document.getElementById('id01').style.display='none'">&times;</span>
+               <h2>Já tenho cadastro</h2>
+               <div class="input_box">
+                  <input required type="email" placeholder="Email" id="email" name="">
+               </div>
+
+               <div class="input_box">
+                  <input required type="password" placeholder="Senha" id="senha" name="">
+               </div>
+
+               <div>
+                  <button class="submit" value="Login" onclick="validate()">
+                     Entrar
+                  </button>
+               </div>
+
+               <div class="support">
+                  <div class="remember">
+                     <span><input type="checkbox" style="margin: 0;padding: 0; height: 13px;"></span>
+                     <span>Lembre-se de mim</span>
+                  </div>
+                  <div class="help">
+                     <a href="#" onclick="esquecer()">
+                        Esqueci a minha senha?
+                     </a>
+                  </div>
+               </div>
+
+               <div class="login_footer">
+                  <div class="sign_up">
+                     <p>Novo por aqui? <a href="cadastrar.html">Quero me cadastrar</a></p>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </form>
+   </div>
+
+   <!-- header section ends    -->
+
+   <!-- home section starts  -->
+
+   <!-- order section starts  -->
+
+   <div class="heading">
+      <!-- <span></span> -->
+      <h3 style="color: white; text-transform: uppercase; padding-top: 60px;">Escolha a forma de Pagamento</h3>
+      <center>
+         <hr style="width: 450px; color: var(--green);">
+      </center>
+   </div>
+
+   <section class="order" id="order">
+
+      <div class="row">
+         <div class="col-75">
+            <!-- <form> -->
+            <div class="form">
+               <div class="row">
+                  <div class="col-50">
+                     <label class="hovercard" style="background-color: rgb(238, 238, 238); padding: 10px;"><input
+                           type="radio" id="credito" name="fav_language" value="credito"> <i
+                           class="fas fa-credit-card"></i> Novo cartão de
+                        credito</label>
+
+                     <div style="padding: 5px 25px;">
+                        <label for="cname">
+                           <!-- <div id="rtotal"></div> -->
+                           <h3> R$ 0 à vista</h3>
+                        </label>
+                        <label for="cname">Nome do cartão</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Ex: José Garcia">
+                        <label for="ccnum">Número do Cartão de Crédito</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="Ex: 1111-2222-3333-4444">
+                        <label for="expmonth">Validade de mês</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="Ex: Maio">
+                        <div class="row">
+                           <div class="col-50">
+                              <label for="expyear">Validade de ano</label>
+                              <input type="text" id="expyear" name="expyear" placeholder="Ex: 2022">
+                           </div>
+                           <div class="col-50">
+                              <label for="cvv">CVV</label>
+                              <input type="text" id="cvv" name="cvv"
+                                 placeholder="Ex: 352 (código de 3 e 4 digitos impresso na frente ou no verso do seu cartão)">
+                           </div>
+                        </div>
+                        <input type="submit" value="Concluir pedido" class="btn" onclick="breve();"
+                           style="box-shadow: none;">
+
+                     </div>
+                  </div>
+               </div>
+               <br>
+               <hr style="width: 100%; border: 1px solid rgb(182, 182, 182);">
+               <br><br>
+               <div class="col-47">
+
+                  <label style="background-color: rgb(238, 238, 238); padding: 10px;">
+                     <input type="radio" id="pix" name="fav_language" value="pix"> <img src="./images/pix-brands.svg"
+                        alt="" srcset="" width="17px" style="vertical-align: middle; padding-bottom: 4px;"> Pix</label>
+                  <div style="padding: 0px 25px;">
+                     <label for="cname">
+                        <h3> R$ 0 à vista</h3>
+                     </label>
+                     <label for="fname">Copie o código Pix na próxima etapa e faça o pagamento na instituição financeira
+                        de sua escolha. O código tem validade
+                        de 10 Minutos.</label>
+
+                     <input type="submit" value="Concluir pedido" class="btn" onclick="breve();"
+                        style="box-shadow: none;">
+                  </div>
+               </div>
+
+            </div>
+            <!-- </form> -->
+         </div>
+
+   </section>
+
+
+   <!-- footer section starts  -->
+   <section class="footer">
+
+
+      <div class="share">
+         <a href="https://pt-br.facebook.com/sysburguer" class="fab fa-facebook-f"></a>
+         <a href="https://twitter.com/sysburguer" class="fab fa-twitter"></a>
+         <a href="https://www.instagram.com/sysburguer" class="fab fa-instagram"></a>
+         <a href="https://br.linkedin.com/sysburguer" class="fab fa-linkedin"></a>
+      </div>
+
+      <div class="credit"> © Copyright <span>SYSBURGUER</span> | Todos os direitos reservados | <a id="myBtn"
+            class="Pol"> Política de Privacidade</a> | <a id="myBtn1" class="Pol"> Formas de Pagamentos</a> <br>
+         <p style="padding-top:5px">(Andrews - Everton - José - Luis - Marcos - Mário - Vitória | <b>SENAI 2022 -
+               3TDS</b>)</p>
+      </div>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+         <!-- Modal content -->
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>TERMOS DE SERVIÇO E POLÍTICA DE PRIVACIDADE POLÍTICA DE PRIVACIDADE DA SYSBURGUER</h3><br>
+
+            <p>Todas as suas informações pessoais recolhidas, serão usadas para o ajudar a tornar a sua visita no nosso
+               site o mais produtiva e agradável possível.
+            </p>
+
+            <p>A garantia da confidencialidade dos dados pessoais dos utilizadores do nosso site é importante para o
+               SYSBURGUER.</p>
+
+            <p>Todas as informações pessoais relativas a membros, assinantes, clientes ou visitantes que usem o
+               SYSBURGUER serão tratadas em concordância com a Lei da Proteção de Dados Pessoais de 26 de outubro de
+               1998 (Lei n.º 67/98).</p>
+
+            <p>A informação pessoal recolhida pode incluir o seu nome, e-mail, número de telefone e/ou telemóvel,
+               morada, data de nascimento e/ou outros.</p>
+
+            <p>O uso do SYSBURGUER pressupõe a aceitação deste Acordo de privacidade. A equipa do SYSBURGUER reserva-se
+               ao direito de alterar este acordo sem aviso prévio. Deste modo, recomendamos que consulte a nossa
+               política de privacidade com regularidade de forma a estar sempre atualizado.</p><br>
+
+            <h3>OS ANÚNCIOS </h3><br>
+            <p>Tal como outros websites, coletamos e utilizamos informação contida nos anúncios. A informação contida
+               nos anúncios, inclui o seu endereço IP (Internet Protocol), o seu ISP (Internet Service Provider, como o
+               Sapo, Clix, ou outro), o browser que utilizou ao visitar o nosso website (como o Internet Explorer ou
+               Google Chrome), o tempo da sua visita e que páginas visitou dentro do nosso website.</p><br>
+
+            <h3>OS COOKIES E WEB BEACONS</h3><br>
+            <p>Utilizamos cookies para armazenar informação, tais como as suas preferências pessoas quando visita o
+               nosso website. Isto poderá incluir um simples popup, ou uma ligação em vários serviços que
+               providenciamos, tais como fóruns.</p>
+
+            <p>Em adição também utilizamos publicidade de terceiros no nosso website para suportar os custos de
+               manutenção. Alguns destes publicitários, poderão utilizar tecnologias como os cookies e/ou web beacons
+               quando publicitam no nosso website, o que fará com que esses publicitários (como o Google através do
+               Google AdSense) também recebam a sua informação pessoal, como o endereço IP, o seu ISP, o seu browser,
+               etc. Esta função é geralmente utilizada para geotargeting (mostrar publicidade de Lisboa apenas aos
+               leitores oriundos de Lisboa por ex.) ou apresentar publicidade direcionada a um tipo de utilizador (como
+               mostrar publicidade de restaurante a um utilizador que visita sites de culinária regularmente, por ex.).
+            </p>
+
+            <p>Você detém o poder de desligar os seus cookies, nas opções do seu browser, ou efetuando alterações nas
+               ferramentas de programas Anti-Virus, como o Norton Internet Security. No entanto, isso poderá alterar a
+               forma como interage com o nosso website, ou outros websites. Isso poderá afetar ou não permitir que faça
+               logins em programas, sites ou fóruns da nossa e de outras redes.</p><br>
+
+            <h3>LIGAÇÕES A SITES DE TERCEIROS</h3><br>
+            <p>SYSBURGUER possui ligações para outros sites, os quais, a nosso ver, podem conter informações /
+               ferramentas úteis para os nossos visitantes. A nossa política de privacidade não é aplicada a sites de
+               terceiros, pelo que, caso visite outro site a partir do nosso deverá ler a politica de privacidade do
+               mesmo.</p>
+
+            <p>Não nos responsabilizamos pela política de privacidade ou conteúdo presente nesses mesmos sites.</p>
+         </div>
+
+      </div>
+
+      <!-- Modal formas de pagamentos  -->
+      <div id="mymodalpg" class="modalpg">
+
+         <!-- Modal content -->
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 style="color: #000;">FORMAS DE PAGAMENTOS</h3><br><br>
+            <div class="tabelaformapg">
+               <img src="images/formapagamento/msvrtpos.svg" alt="" srcset="">
+               <img src="images/formapagamento/visa.svg" alt="" srcset="">
+               <img src="images/formapagamento/dinersclubinternational-1.svg" alt="" srcset="">
+               <img src="images/formapagamento/elo.svg" alt="" srcset="">
+               <img src="images/formapagamento/vrvalerefeicao.svg" alt="" srcset="">
+               <img src="images/formapagamento/tickerrestaurant.svg" alt="" srcset="">
+               <img src="images/formapagamento/picpay.svg" alt="" srcset="">
+               <img src="images/formapagamento/pix.svg" alt="" srcset="">
+            </div>
+
+
+         </div>
+
+      </div>
+      <!-- FIM MODAL FORMAS DE PAGAMENTOS -->
+
+      <script>
+
+         // Get the modal
+         var modal = document.getElementById("myModal");
+         var modalpg = document.getElementById("mymodalpg");
+
+         // Get the button that opens the modal
+         var btn = document.getElementById("myBtn");
+         var btn1 = document.getElementById("myBtn1");
+
+
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close")[0];
+         var span1 = document.getElementsByClassName("close")[1];
+
+         // When the user clicks the button, open the modal 
+         btn.onclick = function () {
+            modal.style.display = "block";
+         }
+
+         btn1.onclick = function () {
+            modalpg.style.display = "block";
+         }
+
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function () {
+            modal.style.display = "none";
+         }
+
+         span1.onclick = function () {
+            modalpg.style.display = "none";
+         }
+
+
+         // When the user clicks anywhere outside of the modal, close it
+         window.onclick = function (event) {
+            if (event.target == modal) {
+               modal.style.display = "none";
+            }
+            if (event.target == modalpg) {
+               modalpg.style.display = "none";
+            }
+         }
+      </script>
+
+   </section>
+
+   <!-- footer section ends  -->
+
+
+</body>
+
+</html>

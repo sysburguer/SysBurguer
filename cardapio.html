@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSBURGUER</title>
+    <link rel="icon" type="image/x-icon" href="images/Logofav.svg">
+    <link rel="stylesheet" href="css/3dflip.css">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="css/loginmodal.css">
+
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="css/lightgallery.min.css">
+
+    <link rel="stylesheet" href="css/gridbox.css">
+
+    <link rel="stylesheet" href="css/alert.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/sidecart.css">
+    <link rel="stylesheet" href="css/produtoscart.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- custom script file link -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="js/login.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <!-- header section starts     -->
+
+    <section class="header">
+
+        <a href="index.html" class="logo"><img src="images/Logo.svg" alt="" srcset="" width="110px"></a>
+
+        <nav class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="cardapio.html">cardápio</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="contato.html">Contato</a>
+            <!-- <a href="login.html"><i class="fas fa-user-alt" style="font-size:25px"></i></a>
+            <a href="carinho.html"><i class="fas fa-shopping-cart" style="font-size:25px"></i></a> -->
+
+        </nav>
+
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <nav class="navbariconxxx">
+            <ul>
+                <div class="cart">
+                    <div class="dropdown">
+                        <i class="fas fa-user-alt iconuser" id="ativar" style="font-size:25px;"
+                            onclick="document.getElementById('id01').style.display='block'"></i>
+
+                        <!-- <div id="ativar1" class="dropdown-content" style="visibility: hidden;"> -->
+                        <div id="ativar1" class="dropdown-content">
+
+                            <a id=" emailperfil" style="display:none;">
+                                <!-- <script>document.write(localStorage.getItem('email'));</script> -->
+                            </a>
+                            <a href="paineladmin.html">Painel Admin</a>
+                            <a href="meusdados.html">Meus dados</a>
+                            <a href="meuspedidos.html">Meus pedidos</a>
+                            <a href="gpstracker.html">Rastreamento</a>
+                            <a href="" onclick="Sair()">Sair</a>
+                        </div>
+                    </div>
+
+                    <a href="carinho.html">
+                        <i class="fas fa-cart-arrow-down" style="font-size: 25px; margin-left: 5px;"></i>
+                        <!-- <ion-icon name="basket"></ion-icon> -->
+                        <span
+                            style="padding: 4px; border-radius: 10px; background-color: green; color: #fff; position: relative; right: 8px;">0</span>
+                    </a>
+                </div>
+            </ul>
+        </nav>
+
+
+        <!-- <a><span style="cursor:pointer" onclick="openNav()"><i class="fas fa-shopping-cart loader"
+                            style="font-size:25px"></i></span></a> -->
+
+        <!-- SIDECART AQUI -->
+
+        <!-- <div id="mySidecart" class="sidecart">
+                <h3 class="fontcart">MEU CARRINHO</h3>
+                <span href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</span> -->
+
+        <!-- Aqui ADD carrinho -->
+
+        <!-- <div class="container-products">
+                    <div class="product-header">
+                        <h5 class="product-title">PRODUTOS</h5>
+                        <h5 class="price sm-hide">PREÇOS</h5>
+                        <h5 class="quantity">QUANTIDADES</h5>
+                        <h5 class="total">TOTAL</h5>
+                    </div>
+                    <div class="products">
+
+                    </div>
+                </div> -->
+        <!-- fim add carrinho -->
+
+
+        <!-- </div> -->
+        <!-- SIDECART FINAL -->
+
+        <!-- 
+            <script>
+                function openNav() {
+                    document.getElementById("mySidecart").style.width = "800px";
+                    
+                    d
+                }
+
+                function closeNav() {
+                    document.getElementById("mySidecart").style.width = "0";
+                }
+
+            </script> -->
+        <!-- FIM SIDECART AQUI -->
+
+    </section>
+
+
+    <div id="id01" class="modal" style="z-index: 999;">
+
+        <form class="modal-content1 animate">
+            <div class="login_body">
+                <div class="login_box">
+                    <span class="closelogin"
+                        onclick="document.getElementById('id01').style.display='none'">&times;</span>
+                    <h2>Já tenho cadastro</h2>
+                    <div class="input_box">
+                        <input required type="email" placeholder="Email" id="email" name="">
+                    </div>
+
+                    <div class="input_box">
+                        <input required type="password" placeholder="Senha" id="senha" name="">
+                    </div>
+
+                    <div>
+                        <button class="submit" value="Login" onclick="validate()">
+                            Entrar
+                        </button>
+                    </div>
+
+                    <div class="support">
+                        <div class="remember">
+                            <span><input type="checkbox" style="margin: 0;padding: 0; height: 13px;"></span>
+                            <span>Lembre-se de mim</span>
+                        </div>
+                        <div class="help">
+                            <a href="#" onclick="esquecer()">
+                                Esqueci a minha senha?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="login_footer">
+                        <div class="sign_up">
+                            <p>Novo por aqui? <a href="cadastrar.html">Quero me cadastrar</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- header section ends    -->
+
+    <div class="heading">
+        <!-- <span></span> -->
+        <h3 style="color: white; text-transform: uppercase; padding-top: 60px;">Cardápio</h3>
+        <center>
+            <hr style="width: 145px; color: var(--green);">
+        </center>
+    </div>
+
+    <!-- Combo - 3d flip aqui  -->
+    <div class="wrapper ">
+        <h4 style="padding-top: 15px;">Combos</h4>
+        <div class="cols">
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbgorgonzola.png">
+                            <h5 class="name">SB Gorgonzola</h5>
+                            <div class="preco">R$40,00</div>
+                            <!-- <span>Lorem ipsum</span> -->
+                        </div>
+
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">O pão com gergelim, nossa maionese de fabricação própria, molho
+                                barbecue, anéis de cebola crocantes...</p>
+                            <!-- <p class="tituloscad">SB Gorgonzola</p> -->
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+
+                            <button class="saibamais" onclick="window.location.href='gorgonzola.html';">Saiba
+                                mais</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+
+            </div>
+
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbfrangoduplobacon.png">
+                            <h5>SB Frango Duplo Bacon</h5>
+                            <div class="preco">R$40,00</div>
+                            <!-- <span>Lorem ipsum</span> -->
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Pão com gergelim, nossa maionese de fabricação própria, alface,
+                                tomate, cebola, quatro fatias de picles, molho barbecue...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='frangoduplobacon.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+
+            </div>
+
+
+
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbonionringsduplo.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Onion Rings Duplo</h5>
+                            <div class="preco">R$40,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">O pão com gergelim, nossa maionese de fabricação própria, aquela nossa
+                                cebola crocante como toda Onio...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='onionringsduplo.html';">Saiba
+                                mais</button>
+
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbduplo.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Duplo</h5>
+                            <div class="preco">R$40,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Pão com gergelim, nossa maionese de fabricação própria, alface,
+                                tomate, cebola, quatro fatias de picles, molho barbecue...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='sbduplo.html';">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbfrangoempanado.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Frango Empanado</h5>
+                            <div class="preco">R$40,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Pão com gergelim, nossa maionese de fabricação própria, alface, tomate
+                                e um delicioso peito de frango empanado.</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='frangoempanado.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbvegetariano.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Vegetariano</h5>
+                            <div class="preco">R$40,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Pão com gergelim, nossa maionese de fabricação própria, alface,
+                                tomate, cebola, kachup , quatro fatias de picles...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='vegetariano.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- Combo - 3d flip final  -->
+
+    <!-- Porções - 3d flip aqui  -->
+    <div class="wrapper">
+        <h4>Porções</h4>
+        <div class="cols">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbnuggets.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Nuggets</h5>
+                            <div class="preco">R$30,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Pedaços de frango empanados, sempre crocantes e com tempero suave....
+                            </p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='nuggets.html';">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbonionrings.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Onion Rings</h5>
+                            <div class="preco">R$30,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Cebolas cortadas em forma de anéis, empanadas com uma leve camada...
+                            </p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='ponionrings.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbbatatacheddarebacon.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Batata Cheddar e Bacon</h5>
+                            <div class="preco">R$30,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Aquela batatinha irresistível, que você já conhece, coberta com
+                                cheddar...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='batatacheddar.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbbatatafritasimples.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Batata Frita Simples</h5>
+                            <div class="preco">R$30,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">A batata frita mais famosa do mundo. Deliciosas batatas
+                                selecionadas...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='batatasimples.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbbolinhoqueijo.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Bolinho Queijo</h5>
+                            <div class="preco">R$30,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Bolinha de queijo é um salgado muito popular e que aparentemente...
+                            </p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='bolinhoqueijo.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sbmandioca.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>SB Mandioca</h5>
+                            <div class="preco">R$30,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Mandioca frita fica mais crocante por fora e macia por dentro...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='mandioca.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Porções - 3d flip final  -->
+
+    <!-- Molhos - 3d flip aqui  -->
+    <div class="wrapper">
+        <h4>Molhos</h4>
+        <div class="cols">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/molhotartaro.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Molho Tartaro</h5>
+                            <div class="preco">R$10,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Molho tártaro é um molho culinário feito à base de maionese. É
+                                utilizado frequentemente...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='molhotartano.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/molhobarbecue.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Molho Barbecue</h5>
+                            <div class="preco">R$10,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">O molho barbecue é o nome genérico de uma variedade de molhos de sabor
+                                forte...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='molhobarbecue.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/molhomaioneseverde.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Molho Maionese Verde</h5>
+                            <div class="preco">R$10,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Molho Maionese Verde é um molho para salada feito com maionese...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='molhoverde.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/molhorosa.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Molho Rosa</h5>
+                            <div class="preco">R$10,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">É conhecido em algumas áreas como molho de coquetel ou molho de frutos
+                                do mar...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='molhorosa.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Molhos - 3d flip final  -->
+
+    <!-- Sobremesas - 3d flip aqui  -->
+    <div class="wrapper">
+        <h4>SOBREMESAS</h4>
+        <div class="cols">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/tortadelimão.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Torta de Limão</h5>
+                            <div class="preco">R$12,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Torta recheada com pudim de limão, biscoitos de chocolate....</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='tortadelimao.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/tortademerenguedelimão.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Torta de Merengue de Limão</h5>
+                            <div class="preco">R$12,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Torta de merengue de limão com biscoitos triturados, chantilly e
+                                fatia...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais"
+                                onclick="window.location.href='tortadelimaocommerngue.html';">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/bolodechocolate.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Bolo de Chocolate</h5>
+                            <div class="preco">R$12,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Bolo de chocolate recheado com creme...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais"
+                                onclick="window.location.href='tacademanteigaamendoim.html';">Saiba mais</button>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sweetdemorango.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Sweet de Morango</h5>
+                            <div class="preco">R$12,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Recheado com brigadeiro branco cremoso, brigadeiro de chocolate...
+                            </p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='biscooitodemorango.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/bananasplit.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Banana Split</h5>
+                            <div class="preco">R$12,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Recheado com bananas em cubos, brownies, calda quente de chocolate...
+                            </p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='bananasplit.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/cheesecakedecereja.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Cheesecake de cereja</h5>
+                            <div class="preco">R$12,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Recheado com geleia de cereja, cream cheese...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='cheesecakedecereja.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/milkshakechocolate.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Milk Shake Chocolate</h5>
+                            <div class="preco">R$20,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Deliciosamente cremoso. O novo Milk Shake Chocolate é...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='milkchocolate.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/milkshakemorango.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Milk Shake Morango</h5>
+                            <div class="preco">R$20,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Deliciosamente cremoso. O novo Milk Shake Morango é...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='milkmorango.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/milkshakeovomaltine.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Milk Shake Ovomaltine</h5>
+                            <div class="preco">R$20,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Deliciosamente cremoso. O novo Milk Shake Ovomaltine é...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='milkovo.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- Sobremesas - 3d flip final  -->
+
+    <!-- Sundae - 3d flip inicio -->
+    <div class="wrapper">
+        <h4>Sundaes</h4>
+        <div class="cols">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sundaemorango.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Sundae Morango</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">A medida certa entre calda de morango e massa gelada de baunilha que
+                                pode...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='sundaemorango.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sundaechocolate.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Sundae Chocolate</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">A medida certa entre calda de chocolate e massa gelada de baunilha
+                                que...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='sundaechocolate.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sundaecaramelo.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Sundae Caramelo</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">A medida certa entre calda de caramelo e massa gelada de baunilha
+                                que...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='sundaecaramelo.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sundaelimão.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Sundae Limão</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">A medida certa entre calda de limão e massa gelada de baunilha que...
+                            </p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='sundaelimao.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sundaemaracujá.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Sundae Maracujá</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">A medida certa entre calda de maracujá e massa gelada de baunilha que
+                                pode...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='sundaemaracuja.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/sundaeuva.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Sundae Uva</h5>
+                            <div class="preco">R$9,00</div>
+
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">A medida certa entre calda de uva e massa gelada de baunilha que
+                                pode...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='sundaeuva.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- Sundae - 3d flip final -->
+
+    <!-- Bebidas - 3d flip inicio -->
+    <div class="wrapper">
+        <h4>BEBIDAS</h4>
+        <div class="cols">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/coca-cola.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Coca-Cola</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Refrescante e geladinho. Uma bebida assim refresca a vida...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='cocacola.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/fantaguaraná.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Fanta Guaraná</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Refrescante e geladinho. Uma bebida assim refresca a vida...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='fantaguarana.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/fantalaranja.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Fanta Laranja</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Refrescante e geladinho. Uma bebida assim refresca a vida...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='fantalaranja.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/pepsi.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Pepsi</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Refrescante e geladinho. Uma bebida assim refresca a vida...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='pepsi.html';">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/dellvalleuva.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Dell Valle Uva</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Deliciosos sabores à sua escolha. Néctar de fruta...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='dellvalleuva.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container3d">
+                    <div class="front">
+                        <div class="inner">
+                            <img src="images/dellvallelaranja.png">
+                            <!-- <span>Lorem ipsum</span> -->
+                            <h5>Dell Valle Laranja</h5>
+                            <div class="preco">R$9,00</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p class="tituloscad">Deliciosos sabores à sua escolha. Néctar de fruta...</p>
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                suscipit c.</p> -->
+                            <button class="saibamais" onclick="window.location.href='dellvallelaranja.html';">Saiba
+                                mais</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="addcart" id="adicionarcart" onclick="alert();"><i class="fas fa-shopping-cart"
+                        style="font-size:15px; padding-right: 7px;"></i>Adicionar</button>
+            </div>
+
+        </div>
+
+        <script src="js/carinho.js"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="js/alert.js"></script>
+
+    </div>
+
+    <!-- Bebidas - 3d flip final -->
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+    <!-- footer section starts  -->
+    <section class="footer">
+
+
+        <div class="share">
+            <a href="https://pt-br.facebook.com/sysburguer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/sysburguer" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/sysburguer" class="fab fa-instagram"></a>
+            <a href="https://br.linkedin.com/sysburguer" class="fab fa-linkedin"></a>
+        </div>
+
+        <div class="credit"> © Copyright <span>SYSBURGUER</span> | Todos os direitos reservados | <a id="myBtn"
+                class="Pol"> Política de Privacidade</a> | <a id="myBtn1" class="Pol"> Formas de Pagamentos</a> <br>
+            <p style="padding-top:5px">(Andrews - Everton - José - Luis - Marcos - Mário - Vitória | <b>SENAI 2022 -
+                    3TDS</b>)</p>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>TERMOS DE SERVIÇO E POLÍTICA DE PRIVACIDADE POLÍTICA DE PRIVACIDADE DA SYSBURGUER</h3><br>
+
+                <p>Todas as suas informações pessoais recolhidas, serão usadas para o ajudar a tornar a sua visita no
+                    nosso site o mais produtiva e agradável possível.
+                </p>
+
+                <p>A garantia da confidencialidade dos dados pessoais dos utilizadores do nosso site é importante para o
+                    SYSBURGUER.</p>
+
+                <p>Todas as informações pessoais relativas a membros, assinantes, clientes ou visitantes que usem o
+                    SYSBURGUER serão tratadas em concordância com a Lei da Proteção de Dados Pessoais de 26 de outubro
+                    de 1998 (Lei n.º 67/98).</p>
+
+                <p>A informação pessoal recolhida pode incluir o seu nome, e-mail, número de telefone e/ou telemóvel,
+                    morada, data de nascimento e/ou outros.</p>
+
+                <p>O uso do SYSBURGUER pressupõe a aceitação deste Acordo de privacidade. A equipa do SYSBURGUER
+                    reserva-se ao direito de alterar este acordo sem aviso prévio. Deste modo, recomendamos que consulte
+                    a nossa política de privacidade com regularidade de forma a estar sempre atualizado.</p><br>
+
+                <h3>OS ANÚNCIOS </h3><br>
+                <p>Tal como outros websites, coletamos e utilizamos informação contida nos anúncios. A informação
+                    contida nos anúncios, inclui o seu endereço IP (Internet Protocol), o seu ISP (Internet Service
+                    Provider, como o Sapo, Clix, ou outro), o browser que utilizou ao visitar o nosso website (como o
+                    Internet Explorer ou Google Chrome), o tempo da sua visita e que páginas visitou dentro do nosso
+                    website.</p><br>
+
+                <h3>OS COOKIES E WEB BEACONS</h3><br>
+                <p>Utilizamos cookies para armazenar informação, tais como as suas preferências pessoas quando visita o
+                    nosso website. Isto poderá incluir um simples popup, ou uma ligação em vários serviços que
+                    providenciamos, tais como fóruns.</p>
+
+                <p>Em adição também utilizamos publicidade de terceiros no nosso website para suportar os custos de
+                    manutenção. Alguns destes publicitários, poderão utilizar tecnologias como os cookies e/ou web
+                    beacons quando publicitam no nosso website, o que fará com que esses publicitários (como o Google
+                    através do Google AdSense) também recebam a sua informação pessoal, como o endereço IP, o seu ISP, o
+                    seu browser, etc. Esta função é geralmente utilizada para geotargeting (mostrar publicidade de
+                    Lisboa apenas aos leitores oriundos de Lisboa por ex.) ou apresentar publicidade direcionada a um
+                    tipo de utilizador (como mostrar publicidade de restaurante a um utilizador que visita sites de
+                    culinária regularmente, por ex.).
+                </p>
+
+                <p>Você detém o poder de desligar os seus cookies, nas opções do seu browser, ou efetuando alterações
+                    nas ferramentas de programas Anti-Virus, como o Norton Internet Security. No entanto, isso poderá
+                    alterar a forma como interage com o nosso website, ou outros websites. Isso poderá afetar ou não
+                    permitir que faça logins em programas, sites ou fóruns da nossa e de outras redes.</p><br>
+
+                <h3>LIGAÇÕES A SITES DE TERCEIROS</h3><br>
+                <p>SYSBURGUER possui ligações para outros sites, os quais, a nosso ver, podem conter informações /
+                    ferramentas úteis para os nossos visitantes. A nossa política de privacidade não é aplicada a sites
+                    de terceiros, pelo que, caso visite outro site a partir do nosso deverá ler a politica de
+                    privacidade do mesmo.</p>
+
+                <p>Não nos responsabilizamos pela política de privacidade ou conteúdo presente nesses mesmos sites.</p>
+            </div>
+
+        </div>
+
+        <!-- Modal formas de pagamentos  -->
+        <div id="mymodalpg" class="modalpg">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>FORMAS DE PAGAMENTOS</h3><br><br>
+                <div class="tabelaformapg">
+                    <img src="images/formapagamento/msvrtpos.svg" alt="" srcset="">
+                    <img src="images/formapagamento/visa.svg" alt="" srcset="">
+                    <img src="images/formapagamento/dinersclubinternational-1.svg" alt="" srcset="">
+                    <img src="images/formapagamento/elo.svg" alt="" srcset="">
+                    <img src="images/formapagamento/vrvalerefeicao.svg" alt="" srcset="">
+                    <img src="images/formapagamento/tickerrestaurant.svg" alt="" srcset="">
+                    <img src="images/formapagamento/picpay.svg" alt="" srcset="">
+                    <img src="images/formapagamento/pix.svg" alt="" srcset="">
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- FIM MODAL FORMAS DE PAGAMENTOS -->
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            var modalpg = document.getElementById("mymodalpg");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+            var btn1 = document.getElementById("myBtn1");
+
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            var span1 = document.getElementsByClassName("close")[1];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            btn1.onclick = function () {
+                modalpg.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            span1.onclick = function () {
+                modalpg.style.display = "none";
+            }
+
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                if (event.target == modalpg) {
+                    modalpg.style.display = "none";
+                }
+            }
+        </script>
+
+    </section>
+
+    <!-- footer section ends  -->
+
+
+
+
+
+
+
+
+
+
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <script src="js/lightgallery.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    <script>
+        lightGallery(document.querySelector('.gallery .gallery-container'));
+    </script>
+
+</body>
+
+</html>
